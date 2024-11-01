@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Background Layout</title>
+    <style>
+        /* Background color and overall page style */
+        body {
+            background-color: purple;
+            color: pink;
+            text-align: center;
+            margin: 0;
+            position: relative; /* Allow positioning of pseudo-elements */
+            overflow: hidden; /* Prevent overflow of pseudo-elements */
+        }
+
+        /* Large heart shape in the background */
+        .heart {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            width: 500px; /* Width of the heart */
+            height: 500px; /* Height of the heart */
+            background-color: rgba(255, 192, 203, 0.5); /* Light pink with transparency */
+            transform: translate(-50%, -50%) rotate(-45deg); /* Center and rotate the heart */
+            z-index: -2; /* Send to back */
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 500px; /* Width of the heart's lobes */
+            height: 500px; /* Height of the heart's lobes */
+            background-color: rgba(255, 192, 203, 0.5); /* Same light pink */
+            border-radius: 50%; /* Round the edges to form lobes */
+        }
+
+        .heart::before {
+            top: -150px; /* Position the top lobe */
+            left: 0;
+        }
+
+        .heart::after {
+            left: 150px; /* Position the right lobe */
+            top: 0;
+        }
+
+        /* Text at the top left */
+        .header-text {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 23px;
+            z-index: 1; /* Bring text in front */
+        }
+
+        /* Centered image */
+        .center-image {
+            margin-top: 120px; /* Adjust margin-top to move the image lower */
+            max-width: 20%;
+            border: 15px solid pink; /* Added border to the image */
+            border-radius: 10px; /* Optional: rounded corners */
+            z-index: 1; /* Bring image in front */
+        }
+
+        /* Text under the image */
+        .footer-text {
+            margin-top: 20px;
+            font-size: 18px;
+            border: 5px solid pink; /* Added border to the footer text */
+            padding: 10px; /* Added padding for spacing inside the border */
+            display: inline-block; /* Optional: to make the border wrap around the text */
+            z-index: 1; /* Bring footer text in front */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Heart shape in the background -->
+    <div class="heart"></div>
+
+    <!-- Text at the top left with heart emojis -->
+    <div class="header-text">To my dearest Phyu Thwe Soe ❤️❤️, my heart knows no distance. No matter where I go, it’s always you who fills my mind and heart. With every sunrise and sunset, I carry a part of you with me, hoping that one day we will be closer than just thoughts and memories. ❤️</div>
+
+    <!-- Image centered on the page -->
+    <img src="file:///C:/Users/HUAWEI/Pictures/Saved%20Pictures/phyuthwesoe.jpg" alt="My beloved girl" class="center-image">
+
+    <!-- Text under the image with heart emojis -->
+    <div class="footer-text">“It’s a cruel twist of fate that keeps us apart ❤️, but love doesn’t always follow the paths we choose. Our journey may be marked by longing, but in my heart ❤️, you’ll always have a place, a memory that brings both joy and a touch of sadness. Though we may not walk side by side, every step I take carries your presence with me.”</div>
+
+</body>
+</html>
